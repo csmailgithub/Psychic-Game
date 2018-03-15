@@ -1,2 +1,2 @@
 # Psychic-Game
-New  Repo
+Homework for week 3
