@@ -17,9 +17,10 @@ console.log("w " + wins + " l " + losses + " GuessesLeft: " + guessesLeft
 // begin indexing user guess's/ keyups
 document.onkeyup = function(event) {
 
-	// When user presses a key assigns it	 to userGuess
+	// When user presses a key assigns it to userGuess
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
+		//if the user guesses incorrectly;
 		//puts user's guess into the array only if it hasn't been pressed during the last 9 guesses
 		// i.e. index of 1 from the array bc these are strings the ".indexOf" method is used
 		if (guessesSoFar.indexOf(userGuess) < 0 
@@ -57,7 +58,7 @@ document.onkeyup = function(event) {
 
 		}
 
-	// Displaying into to HTML
+	// Displaying into to HTML 
 	var html = "<p><h1>The Psychic Game</h1></p>" + "<p><h4>Guess what letter Im thinking of</h4></p>" +
 	 "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " +
 	  guessesLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessesSoFar + "</h4></p>";
