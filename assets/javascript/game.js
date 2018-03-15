@@ -20,7 +20,8 @@ document.onkeyup = function(event) {
 	// When user presses a key assigns it	 to userGuess
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-		//puts user's guess into the array only if it hasn't been pressed during the last 9 guesses i.e. index of 1 from the array
+		//puts user's guess into the array only if it hasn't been pressed during the last 9 guesses
+		// i.e. index of 1 from the array bc these are strings the ".indexOf" method is used
 		if (guessesSoFar.indexOf(userGuess) < 0 
 		&& alphabet.indexOf(userGuess) >= 0) {
 			guessesSoFar[guessesSoFar.length]=userGuess;
