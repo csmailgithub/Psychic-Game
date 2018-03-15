@@ -7,7 +7,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var guessesSoFar = [];
-// userGuess is set to null, not undefined as that won't work here
+// userGuess is set to null, undefined won't work here
 var userGuess = null;
 // Have computer pick a letter and store it in alphabet
 var letterToGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -17,7 +17,7 @@ console.log("w " + wins + " l " + losses + " GuessesLeft: " + guessesLeft
 // begin indexing user guess's/ keyups
 document.onkeyup = function(event) {
 
-	// When user presses a key assigns it to userGuess
+	// When user presses a key assigns it to userGuess, took this line from our in class activities
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 		//if the user guesses incorrectly;
@@ -32,7 +32,7 @@ document.onkeyup = function(event) {
 
 		// if letterToGuess is the userGuess, add 1 to wins
 		// reset guessesLeft to 9, 
-		// and empty the guessesSoFar and have the computer guess a new letter
+		// and empty the guessesSoFar and have the computer pick a new letter
 		if (letterToGuess == userGuess) {
 			wins++;
 			alert("You won!");
@@ -46,7 +46,7 @@ document.onkeyup = function(event) {
 
 		// if guessesLeft gets to 0 add 1 to losses
 		// set guessesLeft back to 9, and empty the guessesSoFar array
-		// also have the computer make a new random pick
+		// have computer pick a new letter
 		if (guessesLeft == 0) {
 			losses++;
 			alert("You lost!");
@@ -58,7 +58,7 @@ document.onkeyup = function(event) {
 
 		}
 
-	// Displaying into to HTML 
+	// Displaying into to HTML, this part is extra tricky 
 	var html = "<p><h1>The Psychic Game</h1></p>" + "<p><h4>Guess what letter Im thinking of</h4></p>" +
 	 "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " +
 	  guessesLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessesSoFar + "</h4></p>";
